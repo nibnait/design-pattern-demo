@@ -5,11 +5,12 @@ import cc.tianbin.pattern.factory_method.method01_config_map.OpenTailMoneyValida
 import cc.tianbin.pattern.factory_method.method01_config_map.bo.OpenTailMoneyCheckBO;
 import cc.tianbin.pattern.factory_method.method02_factory_map.AuditServiceFactory;
 import cc.tianbin.pattern.factory_method.method02_factory_map.bo.ItemsEntity;
-import cc.tianbin.pattern.factory_method.method03_strategy_annotation.draw.DrawExec;
+import cc.tianbin.pattern.factory_method.method03_strategy.draw.DrawExec;
+import cc.tianbin.pattern.factory_method.method04_template.StockOpStrategy;
+import cc.tianbin.pattern.factory_method.method04_template.bo.StockOpReq;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -20,7 +21,6 @@ import javax.annotation.Resource;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-@SpringBootConfiguration
 @Slf4j
 public class AppTest {
 
@@ -28,14 +28,30 @@ public class AppTest {
     private OpenTailMoneyValidator openTailMoneyValidator;
     @Resource
     private DrawExec drawExec;
+    @Resource
+    private StockOpStrategy stockOpStrategy;
 
     @Test
-    public void method03() {
-        log.info("=== method03 单项概率 抽奖 ===");
+    public void method04_template() {
+
+        log.info("=== method04 [模板方法]-下单 ===");
+        stockOpStrategy.execute(new StockOpReq(1));
+
+        log.info("=== method04 [模板方法]-支付 ===");
+        stockOpStrategy.execute(new StockOpReq(2));
+
+        log.info("=== method04 [模板方法]-取消支付 ===");
+        stockOpStrategy.execute(new StockOpReq(3));
+
+    }
+
+    @Test
+    public void method03_strategy() {
+        log.info("=== method03 [策略模式]-单项概率 抽奖 ===");
         String rewardId = drawExec.doDrawExec(1);
         log.info("奖品id: {}", rewardId);
 
-        log.info("=== method03 总体概率 抽奖 ===");
+        log.info("=== method03 [策略模式]-总体概率 抽奖 ===");
         rewardId = drawExec.doDrawExec(2);
         log.info("奖品id: {}", rewardId);
     }

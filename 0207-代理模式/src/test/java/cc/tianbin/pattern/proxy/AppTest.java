@@ -16,7 +16,7 @@ public class AppTest {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring-config.xml");
         UserDao userDao = beanFactory.getBean("userDao", UserDao.class);
         String res = userDao.queryUserInfo("100001");
-        log.info("=== \n userDao.queryUserInfo res：{}", res);
+        log.info("=== userDao.queryUserInfo === {}", res);
     }
 
 }
