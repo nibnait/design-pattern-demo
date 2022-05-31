@@ -10,6 +10,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 /**
+ * 把 UserDao 注册到 Spring 容器中。与本节 代理模式 无关。可以不看
  * Created by nibnait on 2022/05/31
  */
 public class RegisterBeanFactory implements BeanDefinitionRegistryPostProcessor {

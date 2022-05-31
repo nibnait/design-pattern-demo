@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
 /**
+ * 代理类。实现 UserDao，执行sql语句 并返回结果。
  * Created by nibnait on 2022/05/31
  */
 @Slf4j

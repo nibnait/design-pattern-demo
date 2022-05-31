@@ -9,14 +9,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Created by nibnait on 2022/05/31
  */
 @Slf4j
-public class ApiTest {
+public class AppTest {
 
     @Test
     public void testUserDao() {
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring-config.xml");
         UserDao userDao = beanFactory.getBean("userDao", UserDao.class);
         String res = userDao.queryUserInfo("100001");
-        log.info("测试结果：{}", res);
+        log.info("=== \n userDao.queryUserInfo res：{}", res);
     }
 
 }
