@@ -19,6 +19,7 @@
     <!-- cc.tianbin.pattern -->
     <modules>
         <module>0101-工厂方法</module>
+        <module>0205-外观模式</module>
         <module>0207-代理模式</module>
         <module>0301-责任链模式</module>
         <module>0308-策略模式</module>
