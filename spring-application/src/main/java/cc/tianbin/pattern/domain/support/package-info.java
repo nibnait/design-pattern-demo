@@ -1,0 +1,1 @@
+package cc.tianbin.pattern.domain.support;

@@ -17,5 +17,8 @@ eg: 更新库存接口。
 模板方法为：
 1. 更新 sku_stock 表
 2. 更新 sku_isolate_stock 表
-3. 更新 sku_group_stock 表
+3. 更新 sku_group_stock 表  
+
 但是不同的 创建订单、支付订单、取消订单 对应的实际操作是不同的。
+
+### 方法5 与【状态模式】配合。

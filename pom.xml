@@ -19,6 +19,9 @@
     <!-- cc.tianbin.pattern -->
     <modules>
         <module>0101-工厂方法</module>
+        <module>0201-适配器模式</module>
+        <module>0202-桥接模式</module>
+        <module>0203-组合模式</module>
         <module>0205-外观模式</module>
         <module>0207-代理模式</module>
         <module>0301-责任链模式</module>
