@@ -1,4 +1,4 @@
-# [设计模式](https://tianbin.cc/md/design-pattern/design-pattern.html)
+# [设计模式 概览](./overview.md)
 
 ## 01xx 创建型模式
  - [0101-工厂方法](./0101-工厂方法)
