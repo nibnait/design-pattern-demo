@@ -37,7 +37,6 @@ public class ApplicationContextHelper implements ApplicationContextAware {
         }
     }
 
-
     private static BeanDefinitionBuilder getBeanDefinitionBuilder(Class clazz) {
         return BeanDefinitionBuilder.genericBeanDefinition(clazz);
     }

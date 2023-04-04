@@ -41,13 +41,14 @@ eg2：
 
 ## 设计模式遵循六⼤原则：（SOLID）+ 迪米特法则
 - 单⼀职责（Single Responsibility Principle）：⼀个类和⽅法只做⼀件事。（抽一个xxHelper出来）
-- 开闭原则（Open Close Principle）：扩展开放，修改封闭（抽象架构，扩展实现）
+- 开闭原则（Open Close Principle）：扩展开放，修改封闭（抽象架构，扩展实现）  
+计算各个商品类型的利润率，工厂模式，calc方法，一个商品类型一个子类去实现。扩展性🔼，公式变了只修改子类不会影响其他商品类型。
   ![](./img/overview/SOLID-2开放关闭.jpg)
 - ⾥⽒替换（Liskov Substitution Principle）：多态，⼦类可扩展⽗类
   ![](./img/overview/SOLID-3里式替换.jpg)
 - 接⼝隔离（InterfaceSegregation Principles）：最小化， 减少依赖从而降低变更的风险。
   ![](./img/overview/SOLID-4接口隔离.jpg)
-- 依赖倒置（Dependence Inversion Principle）：细节依赖抽象，下层依赖上层（低层次的查MySQL、查MongoDB 依赖 高层次的抽象出来的 查询repository）
+- 依赖倒置（Dependence Inversion Principle）：细节依赖抽象，下层依赖上层（低层次的查MySQL、查Redis 依赖 高层次的抽象出来的 查询repository）
   ![](./img/overview/SOLID-5依赖倒置.jpg)
 - 迪⽶特法则（Law of Demeter）：最少知道，降低耦合
 

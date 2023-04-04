@@ -4,6 +4,7 @@ import cc.tianbin.pattern.composite.decision_tree.model.dto.DecisionMatterReq;
 import cc.tianbin.pattern.composite.decision_tree.model.entity.TreeNodeLine;
 import io.github.nibnait.common.constants.CommonConstants;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -32,17 +33,19 @@ public abstract class BaseLogic implements LogicFilter {
 
     private boolean decisionLogic(String matterValue, TreeNodeLine nodeLine) {
         String ruleLimitValue = nodeLine.getRuleLimitValue();
+        int compareResult = new BigDecimal(matterValue).compareTo(new BigDecimal(ruleLimitValue));
+        
         switch (nodeLine.getRuleLimitType()) {
             case EQUAL:
                 return matterValue.equals(ruleLimitValue);
             case GT:
-                return Double.parseDouble(matterValue) > Double.parseDouble(ruleLimitValue);
-            case LT:
-                return Double.parseDouble(matterValue) < Double.parseDouble(ruleLimitValue);
+                return compareResult > 0;
             case GTE:
-                return Double.parseDouble(matterValue) >= Double.parseDouble(ruleLimitValue);
+                return compareResult >= 0;
+            case LT:
+                return compareResult < 0;
             case LTE:
-                return Double.parseDouble(matterValue) <= Double.parseDouble(ruleLimitValue);
+                return compareResult <= 0;
             default:
                 return false;
         }
